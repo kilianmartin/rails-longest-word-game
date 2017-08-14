@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Longest-Word Game</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="div box">
+
+
+  <h1 class="text-center">LongestWord#game</h1>
+
+
+
+
+
+  <p>Here is your grid:</p>
+  <p class="text-center"> <%= @grid%> </p>
+
+
+  <p>What's your best shot?</p>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="attempt">
+  <input type="hidden" name="grid" value="<%= @grid%>">
+  <input type="hidden" name="start_time" value="<%= @start_time%>">
+  <input type="submit">
+</form>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
